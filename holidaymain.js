@@ -18,9 +18,10 @@ $(document).ready(function(){
         },
       success: function(data) {
         for (var i = 0; i < data.holidays.length; i++) {
-          $('.result').append(data.holidays[i].date + '<br>')
+          $('.result').append(data.holidays[i].date + moment(data.holidays[i].date).format('dddd') + '<br>')
+          
         }
-
+        console.log(data);
 
       },
       error: function(){
@@ -29,32 +30,6 @@ $(document).ready(function(){
     });
 
   });
-
-
-  // $.ajax({
-  //   url:"https://holidayapi.com/v1/holidays?key=32d92b68-8aae-4bc5-bab4-597ffee7b838&country=IT&year=2017&month=04"
-  //   // ?key=32d92b68-8aae-4bc5-bab4-597ffee7b838&country=IT&year=2017&month=04"
-  //   method:'GET',
-  //   // data: {
-  //   //   key:'32d92b68-8aae-4bc5-bab4-597ffee7b838',
-  //   //   country: paese,
-  //   //   month: month,
-  //   //   year: year
-  //   // },
-  //   success: function(data){
-  //     console.log(data)
-  //     // for (var i = 0; i < data.holidays.length; i++) {
-  //     //   var data = moment();
-  //     //    // data.holidays[i]
-  //     //   $('.result').append(data)
-  //     // }
-  //
-  //   }
-  //   error: function() {
-  //     alert('error')
-  //   }
-  // });
-
 
 
 
